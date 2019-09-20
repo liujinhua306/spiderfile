@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://10.130.10.41:5432/NXSOC5
+    username: postgres
+    password: 12345)(*&^%RFVwsx
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 5
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+http-pool:
+  maxTotal: 200 #最大连接数
+  defaultMaxPerRoute: 100  #并发数
+  connectTimeout: 2000   #创建连接的最长时间
+  connectionRequestTimeout: 500  #从连接池中获取到连接的最长时间
+  socketTimeout: 10000  #数据传输的最长时间
+  validateAfterInactivity: 2000 #空闲永久连接检查间隔，这个牵扯的还比较多 官方推荐使用这个来检查永久链接的可用性，而不推荐每次请求的时候才去检查
+thread-pool:
+  corePoolSize: 10
+  maxPoolSize: 50
+  queueCapacity: 200
+
+file:
+  store:
+    path: C:/Users/20160712/Desktop
+server:
+  port: 8888
